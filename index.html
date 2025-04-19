@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <meta charset="UTF-8">
+    <title>REST API Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
 <body>
-    <p>
-        Consumo de REST-API de Usuarios
-    </p>
+    <p><i class="fas fa-user"></i> Consumo de REST-API de Usuarios</p>
 
     <div>
-        <label>Name </label>
+        <label>Nombre </label>
         <input type="text" id="name">
     </div>
     <div>
         <label>Email </label>
-        <input type="text" id="email">
+        <input type="email" id="email">
     </div>
-
     <div>
-        <label>Age </label>
-        <input type="text" id="age">
+        <label>Edad </label>
+        <input type="number" id="age">
     </div>
-
     <div>
-        <label>Comments </label>
+        <label>Comentarios </label>
         <input type="text" id="comments">
     </div>
 
-    <button onclick="postUser()"> POST users </button>
+    <br>
+    <p>
+        Get by ID
+    </p>
+    <div>
+        <label>ID de usuario </label>
+        <input type="text" id="id-user">
+        <button onclick="getUserById()">Get user</button>
+    </div>
+    <br>
 
-    <button onclick="getUsers()"> GET users </button>
+    <button onclick="postUser()"><i class="fas fa-user-plus"></i> POST user</button>
+    <button onclick="getUsers()"><i class="fas fa-users"></i> GET users</button>
+    <button id="btn-update-user" style="display:none;" onclick="updateUser()">UPDATE user</button>
 
-    <div id="resultado"></div>
+    <div id="resultado-user"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="callrestapi.js"></script>
-
 </body>
 
 </html>
